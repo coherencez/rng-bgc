@@ -2,3 +2,16 @@ body {
   background-color: black;
   transition: all 0.25s ease;
 }
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  background: blue;
+  margin: 1%;
+}
