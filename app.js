@@ -1,6 +1,7 @@
 'use strict'
 const      body = document.body
 const container = document.querySelector('.container')
+const     boxes = document.getElementsByClassName('box')
 
 // string interpolation/templating to incorporate the '#' symbol
 // returns a random float between 0 and 1
@@ -20,11 +21,26 @@ const setBackground = (element, color) => {
 //   return null
 // })
 
-// const timeout = setInterval(() => setBackground(body, getColor()), 250)
-const clearThings = () => clearInterval(timeout)
-
-for (let i = 0; i < 1000; i++) {
+// create boxes in the DOM
+for (let i = 0; i < 100; i++) {
   const box = document.createElement('div')
         box.classList.add('box')
-  container.appendChild(box)
+        container.appendChild(box)
+}
+
+const startThings = () => {
+  const interval = 250
+
+  const colorChangeInterval2 = setInterval(() => {
+    for (let i = 0; i < boxes.length; i++) {
+      setBackground(boxes[i], getColor())
+    }
+  }, interval)
+
+  const colorChangeInterval = setInterval(() => setBackground(body, getColor()), interval)
+  return { colorChangeInterval, colorChangeInterval2 }
+}
+
+const clearThings = (...ids) => {
+  ids.forEach(id => clearInterval(id))
 }
