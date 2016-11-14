@@ -8,8 +8,8 @@ const body = document.body
 const getColor = () => `#${Math.random().toString(16).slice(2,8)}`
 
 // set background of body element to the color passed to function
-const setBackground = (color) => {
-  body.style.background = color
+const setBackground = (element, color) => {
+  element.style.background = color
 }
 
 // body.addEventListener('keypress', (e) => {
@@ -19,5 +19,5 @@ const setBackground = (color) => {
 //   return null
 // })
 
-const timeout = setInterval(() => setBackground(getColor()), 250)
+const timeout = setInterval(() => setBackground(body, getColor()), 250)
 const clearThings = () => clearInterval(timeout)
