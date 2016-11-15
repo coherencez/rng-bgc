@@ -6,12 +6,13 @@ body {
 .container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .box {
-  height: 100px;
-  width: 100px;
+  height: 5px;
+  width: 5px;
   background: blue;
   margin: 1%;
+  border-radius: 50%;
 }
