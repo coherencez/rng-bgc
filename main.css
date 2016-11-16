@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: white;
   transition: all 0.25s ease;
 }
 
@@ -15,4 +15,5 @@ body {
   background: blue;
   margin: 1%;
   border-radius: 50%;
+  position: relative;
 }
