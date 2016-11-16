@@ -22,6 +22,16 @@ const setBackground = (element, color) => {
   element.style.background = color
 }
 
+const setRandomPosition = (element) => {
+  const positions = ['top', 'right', 'bottom', 'left']
+    ,      rndNum = (max = 10, min = 1) => Math.floor(Math.random() * (max - min + 1)) + min
+    ,      rndPos = positions[rndNum(positions.length - 1, 0)]
+  element.style.top = rndNum()
+  element.style.right = rndNum()
+  element.style.left = rndNum()
+  element.style.bottom = rndNum()
+}
+
 // create boxes in the DOM
 for (let i = 0; i < 15000; i++) {
   const box = document.createElement('div')
@@ -37,6 +47,7 @@ const startThings = () => {
   const timer2 = setInterval(() => {
     for (let i = 0; i < boxes.length; i++) {
       setBackground(boxes[i], generateRandomColor())
+      setRandomPosition(boxes[i])
     }
   }, interval)
 
