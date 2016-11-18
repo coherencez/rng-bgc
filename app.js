@@ -33,7 +33,7 @@ const setRandomPosition = (element) => {
 }
 
 // create boxes in the DOM
-for (let i = 0; i < 15000; i++) {
+for (let i = 0; i < 10000; i++) {
   const box = document.createElement('div')
         box.classList.add('box')
         container.appendChild(box)
